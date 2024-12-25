@@ -1,9 +1,7 @@
 <template>
   
     <input type="text" v-model="page.title" />
-    Temps écoulé : {{ time }}
-
-<button @click="reset">Reset</button>
+    Temps écoulé : {{ timer }}
   
 </template>
 <script setup>
@@ -15,7 +13,7 @@ const page = ref({
 });
 
 
-const {time, reset} = useTimer();
+const timer = useTimer();
 
 // const options = { immediate: true };
 // watch(()=>page.value.title, (newPage, oldPage) => {
