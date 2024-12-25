@@ -1,14 +1,26 @@
 <template>
   
-    <input type="text" v-model="name" />
+    <input type="text" v-model="page.title" />
+    Temps écoulé : {{ timer }}
   
 </template>
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, watchEffect } from 'vue';
 
-const name = ref('');
-const options = { immediate: true };
-watch(name, (newValue, oldValue) => {
-  document.title = `Hello | ${newValue}`;
-},options);
+const page = ref({
+  title: '',
+});
+
+
+const timer = useTimer;
+
+// const options = { immediate: true };
+// watch(()=>page.value.title, (newPage, oldPage) => {
+//   document.title = `Hello | ${newPage}`;
+// });
+// console.log(page.value.title);
+
+watchEffect (() => {
+  document.title = `Hello | ${page.value.title}`;
+});
 </script>
