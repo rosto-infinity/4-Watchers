@@ -3,7 +3,7 @@
     <input type="text" v-model="page.title" />
     Temps écoulé : {{ time }}
 
-<button @click="reset">Reset</button>
+<button @click="reset" style="margin-left: 2rem;">Reset</button>
   
 </template>
 <script setup>
